@@ -18,3 +18,17 @@ class PrayerController extends RestfulController {
     }
 
 }
+
+class PrayerSearchCmd {
+    String q
+    String lang
+    String slug
+    Integer max = 100
+
+    static constraints = {
+        q nullable: true
+        lang nullable: true
+        slug nullable: true
+        max nullable: true
+    }
+}

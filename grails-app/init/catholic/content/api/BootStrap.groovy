@@ -4,7 +4,7 @@ class BootStrap {
 
     def init = { servletContext ->
 
-        new Prayer(name: 'Our Father', lang: 'lat', slug: 'ourfather', text: """Our Father who art in heaven,
+        new Prayer(name: 'Our Father', lang: 'eng', slug: 'ourfather', text: """Our Father who art in heaven,
 Hallowed be thy name.
 Thy kingdom come.
 Thy will be done

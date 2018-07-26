@@ -9,19 +9,19 @@ class PrayerService {
     @ReadOnly
     List<Prayer> search(PrayerSearchCmd cmd) {
         List prayers = []
-        List results = Prayer.createCriteria().list(max: cmd.max) {
-            if (cmd.q) {
-                ilike('name', "%${cmd.q}%")
+        List results = Prayer.createCriteria().list(max: cmd?.max ?: 10) {
+            if (cmd?.q) {
+                ilike('name', "%${cmd?.q}%")
             }
-            if (cmd.slug) {
-                eq('slug', cmd.slug)
+            if (cmd?.slug) {
+                eq('slug', cmd?.slug)
             }
-            if (cmd.lang) {
-                eq('lang', cmd.lang)
+            if (cmd?.lang) {
+                eq('lang', cmd?.lang)
             }
         } as List<Prayer>
         prayers.addAll(results)
-        if (!cmd.lang) {
+        if (!cmd?.lang) {
             results.each {
                 prayers.addAll(Prayer.findAllBySlug(it.slug))
             }

@@ -14,6 +14,7 @@ RESTful endpoints for prayers, etc.
 ./gradlew bootRun
 ```
 
+### API Examples
 get a full list of prayers
 ```
 curl -i localhost:8080/prayers
@@ -22,6 +23,17 @@ get a prayer by id
 ```
 curl -i localhost:8080/prayers/1
 ```
+searching the name of a prayer returns that prayer and any language variations
+```
+curl -i "localhost:8080/prayers/search?q=our&max=10"
+```
+
+specify a language variant
+```
+curl -i "localhost:8080/prayers/search?q=our&lang=eng"
+```
+
+search
 
 ### Tests
 ```

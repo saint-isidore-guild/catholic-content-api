@@ -1,5 +1,5 @@
 # Catholic Content API
-RESTful endpoints for prayers, etc.
+RESTful endpoints for prayers, calculating Ember Days, etc.
 
 ## Uses
 [Grails 3](http://docs.grails.org/3.3.x/)
